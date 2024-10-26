@@ -11,12 +11,10 @@ export default (await import("astro/config")).defineConfig({
 	srcDir: "./Source",
 	publicDir: "./Public",
 	outDir: "./Target",
-	site: Tauri
-		? On
-			? "tauri://localhost"
-			: "https://tauri.localhost"
-		: On
-			? "http://localhost"
+	site: On
+		? "http://localhost"
+		: Tauri
+			? "https://tauri.localhost"
 			: "https://editor.land",
 	compressHTML: !On,
 	prefetch: {
@@ -35,9 +33,11 @@ export default (await import("astro/config")).defineConfig({
 			devtools: On,
 		}),
 		Tauri ? null : (await import("@astrojs/sitemap")).default(),
-		On ? null : (await import("@playform/inline")).default({ Logger: 1 }),
+		!On ? (await import("@playform/inline")).default({ Logger: 1 }) : null,
 		(await import("@astrojs/prefetch")).default(),
-		On ? null : (await import("@playform/compress")).default({ Logger: 1 }),
+		!On
+			? (await import("@playform/compress")).default({ Logger: 1 })
+			: null,
 	],
 	experimental: {
 		clientPrerender: true,
@@ -47,8 +47,8 @@ export default (await import("astro/config")).defineConfig({
 		build: {
 			sourcemap: On,
 			manifest: true,
-			minify: !On,
-			cssMinify: !On,
+			minify: On ? false : "terser",
+			cssMinify: On ? false : "esbuild",
 			terserOptions: On
 				? {
 						compress: false,
@@ -107,7 +107,9 @@ export default (await import("astro/config")).defineConfig({
 			transformer: "postcss",
 		},
 		plugins: [
+			// @ts-expect-error
 			(await import("vite-plugin-top-level-await")).default(),
+			// @ts-expect-error
 			((Module: string[]) => ({
 				name: "NodeModules",
 				configureServer: (server: ViteDevServer): void => {

@@ -1,0 +1,1 @@
+function r(r){return new Worker("/_astro/html.worker-Cj1Irjnn.js",{name:r?.name})}export{r as default};
