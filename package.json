@@ -30,7 +30,7 @@
 	"dependencies": {
 		"@astrojs/partytown": "2.1.2",
 		"@astrojs/sitemap": "3.2.1",
-		"@astrojs/solid-js": "4.4.3",
+		"@astrojs/solid-js": "4.4.4",
 		"@codeeditorland/common": "0.0.6",
 		"@codeeditorland/output": "0.0.1",
 		"@codeeditorland/wind": "0.0.1",
@@ -40,7 +40,7 @@
 		"@tailwindcss/aspect-ratio": "0.4.2",
 		"@tailwindcss/forms": "0.5.9",
 		"@tailwindcss/typography": "0.5.15",
-		"astro": "5.0.0-beta.8",
+		"astro": "5.0.0-beta.10",
 		"astro-capo": "0.0.1",
 		"autoprefixer": "10.4.20",
 		"cssnano": "7.0.6",
