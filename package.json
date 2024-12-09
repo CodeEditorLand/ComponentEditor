@@ -1,17 +1,37 @@
 {
-	"author": {
-		"email": "Source/Open@Editor.Land",
-		"name": "🖋️ Source — 👐🏻 Open —",
-		"url": "HTTPS://Editor.Land"
-	},
+	"name": "@codeeditorland/sky",
+	"version": "0.0.1",
+	"private": true,
+	"description": "🌌 Sky —",
+	"keywords": [
+		"astro",
+		"sky",
+		"codeeditorland",
+		"playform"
+	],
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/Sky#readme",
 	"bugs": {
 		"url": "HTTPS://GitHub.Com/CodeEditorLand/Sky/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CodeEditorLand/Sky.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "🖋️ Source — 👐🏻 Open —",
+		"email": "Source/Open@Editor.Land",
+		"url": "HTTPS://Editor.Land"
+	},
+	"scripts": {
+		"Run": "astro dev --host",
+		"prepublishOnly": "astro build"
 	},
 	"dependencies": {
 		"@astrojs/partytown": "2.1.2",
 		"@astrojs/sitemap": "3.2.1",
 		"@astrojs/solid-js": "5.0.0",
-		"@codeeditorland/common": "0.0.6",
+		"@codeeditorland/common": "0.0.1",
 		"@codeeditorland/output": "0.0.1",
 		"@codeeditorland/wind": "0.0.1",
 		"@playform/build": "0.2.0",
@@ -43,31 +63,11 @@
 		"vite-plugin-top-level-await": "1.4.4",
 		"zod": "3.23.8"
 	},
-	"description": "🌌 Sky —",
 	"devDependencies": {
 		"@astrojs/ts-plugin": "1.10.4"
 	},
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/Sky#readme",
-	"keywords": [
-		"astro",
-		"sky",
-		"codeeditorland",
-		"playform"
-	],
-	"license": "SEE LICENSE IN LICENSE",
-	"name": "@codeeditorland/sky",
-	"private": true,
 	"publishConfig": {
 		"access": "restricted",
 		"provenance": true
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/CodeEditorLand/Sky.git"
-	},
-	"scripts": {
-		"Run": "astro dev --host",
-		"prepublishOnly": "astro build"
-	},
-	"version": "0.0.1"
+	}
 }
